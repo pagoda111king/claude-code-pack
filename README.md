@@ -69,6 +69,10 @@ A complete **operating system for solo founders using Claude Code**. Not another
 | `pre-compact-reminder.js` | Context auto-compact | Suggest /save-session if real handoff |
 | `stop-learning-reminder.js` | Session ends | Conditional /save-session + /learn ping |
 
+> 📖 **See how these pieces stitch into real workflows →** [RECIPES.md](RECIPES.md)
+>
+> 5 actual sequences I run: idea-to-ship in 7 days · discovery-call to signed contract · delivery to 5 reusable content pieces · bug-report to release · multi-Claude without collisions.
+
 ---
 
 ## Why this exists
