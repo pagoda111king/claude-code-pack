@@ -1,0 +1,38 @@
+# OS
+.DS_Store
+.AppleDouble
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Backup
+*.bak
+~/.claude.bak.*
+
+# Sensitive (just in case)
+.env
+*.key
+secrets.json
+
+# Build / cache
+node_modules/
+__pycache__/
+*.pyc
+.next/
+dist/
+
+# Logs
+*.log
+
+# Internal sales material (founder-only · NOT for public repo)
+landing/
+STANDARDS.md
+scripts/batch_translate.py
+scripts/sanitize.sh
+scripts/init_github_repo.sh
+scripts/submit_prs.sh
+scripts/submit_one_pr.sh
+scripts/submit_prs_remaining.sh

@@ -1,0 +1,64 @@
+Solo Founder OS · Dual License
+
+═══════════════════════════════════════════════════════════════
+PART 1 · CODE (hooks, scripts, JavaScript files)
+MIT License
+
+Copyright (c) 2026 Solo Founder OS contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+═══════════════════════════════════════════════════════════════
+PART 2 · CONTENT (agents, skills, commands, CLAUDE.md, README, docs)
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+You are free to:
+  ✅ Share — copy and redistribute the material in any medium or format
+  ✅ Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+  ⚠️ Attribution — Give appropriate credit, link to the original, indicate if
+     changes were made.
+  ⚠️ NonCommercial — Do NOT use the material for commercial purposes,
+     including reselling as a competing product / repackaging as a paid pack.
+
+You may use these materials INSIDE your own commercial projects (in your
+~/.claude/ to ship products with). You may NOT redistribute them as a paid
+product or competing pack.
+
+Full license: https://creativecommons.org/licenses/by-nc/4.0/
+
+═══════════════════════════════════════════════════════════════
+PART 3 · QUICK GUIDE
+
+✅ You CAN:
+  - Use this pack in your own ~/.claude/ to build your products
+  - Modify any agent / skill / command / hook for your team's needs
+  - Share your modifications with your direct team
+  - Reference these patterns in blog posts / talks (with attribution)
+
+❌ You CANNOT:
+  - Resell the pack as your own product
+  - Strip attribution and republish
+  - Bundle into a competing config-pack product
+  - Distribute on warez sites / cracked download sites
+
+═══════════════════════════════════════════════════════════════
+
+Questions? Email founder@example.com
