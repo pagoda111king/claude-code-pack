@@ -116,6 +116,41 @@ Any "current state" file (pipeline status, asset board) carries a TTL. When Clau
 
 These four are the reason the pack feels different on day 7 than day 1 — they compound.
 
+> 📁 **See concrete examples** of what your `docs/` looks like after running this for 1-3 months → [examples/](examples/). Filled CLAUDE.md, populated pipeline, real ADR, contract specs, session memos.
+
+---
+
+## How this compares to other Claude Code packs
+
+Honest positioning — there are bigger packs out there. Here's where each one wins.
+
+| | **[Affaan ECC](https://github.com/affaan-m/everything-claude-code)** (176k ⭐) | **[wshobson/agents](https://github.com/wshobson/agents)** (35k ⭐) | **claude-code-pack** (this repo) |
+|---|---|---|---|
+| **Lens** | Agent harness performance optimization | Subagent + skill collection | Solo founder operating system |
+| **Audience** | Dev teams optimizing Claude Code workflows | Generalist Claude Code users | 1-person companies / indie hackers |
+| **Philosophy** | More & deeper | More & broader (185 agents · 153 skills) | Curated · workflow-stitched · less = more |
+| **Plugin install** | ✅ Marketplace native | ✅ Marketplace native | ✅ Plugin manifest included |
+| **Demo videos** | ✅ Yes | ✅ Yes | ❌ Not yet |
+| **Multi-Claude collab discipline** | partial | ❌ | ✅ Contracts pattern |
+| **API cost approval gates** | ❌ | ❌ | ✅ Encoded in CLAUDE.md + hooks |
+| **State file decay (`staleAfterDays`)** | ❌ | ❌ | ✅ Mandatory for rolling state |
+| **Real workflow recipes** | ❌ | ❌ | ✅ [RECIPES.md](RECIPES.md) — 5 sequences |
+| **Sample running-state artifacts** | ❌ | ❌ | ✅ [examples/](examples/) folder |
+| **Free OSS use** | ✅ Fully free | ✅ Fully free | ✅ Free under MIT/CC-BY-NC |
+| **Paid tier** | ❌ | ❌ | Optional · for 1:1 setup + private updates |
+
+**When to pick this one over the others**:
+- You're a solo founder / indie hacker (not a 50-person team)
+- You want curated workflows · not a 200-agent buffet
+- You care about API cost discipline + multi-Claude safety as much as agent count
+
+**When to pick Affaan / wshobson over this**:
+- You want the absolute biggest collection
+- You're a Claude Code power user wanting every possible tool
+- You don't need solo-founder-specific patterns
+
+The three packs aren't substitutes — they're different tools for different operators.
+
 ---
 
 ## Install (60 seconds)

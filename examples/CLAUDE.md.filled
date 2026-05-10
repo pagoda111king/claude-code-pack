@@ -1,0 +1,152 @@
+# Acme Solo · Claude Code Operating Manual
+
+> Drop-in operating manual for Acme Solo (1-person company · audience-services niche).
+> Auto-loaded every session. Edit only on real shifts (every 1-2 months).
+
+---
+
+## 1 · You (the operator)
+
+- **Role**: solo founder running Acme Solo · client-services + 1 self-built SaaS
+- **Coding level**: 5+ years backend · just rewriting the React frontend after 3 years away · Claude Code is a force multiplier · architecture decisions need tradeoffs explicit
+- **Workspace**: Claude Code (deep terminal · 6-8h/day) + Cursor (in-IDE quick edits)
+- **Company stage**: post-PMF on services side · 2 paid SaaS pilots running · stage = scale services / find SaaS PMF
+- **Communication**: English-leaning · client comms in English · internal notes mixed
+- **Code conventions**: comments in English · variable names English · file names kebab-case
+
+## 2 · Resources & boundaries
+
+- Runway: 9 months at current burn (without new client revenue) · 14 months if services hold
+- Customer channels: existing podcast (3.2k weekly) · 4 referral partners · LinkedIn DMs (~10 inbound/week)
+- Legal entity: LLC (US single-member · pass-through tax)
+- API budget: $200/month max · alerts at $150 via daily /cost check
+
+## 3 · Collaboration rules
+
+1. **Understand before doing**: vague request → ask 1-2 sharp questions · don't guess
+2. **Brevity over flourish**: no over-engineering · no decorative comments · no irrelevant error handling
+3. **Spell out tradeoffs**: tech proposals must call out main tradeoff (time / cost / maintainability)
+4. **Cost-aware**: routine = Haiku · main task = Sonnet · strategy = Opus
+5. **Major decisions**: architecture · tech debt · client commitments → log to `docs/decisions/YYYYMMDD-<slug>.md`
+6. **Don't suggest revenue plays unsolicited** · but when asked · be direct
+
+## 4 · Task routing
+
+### Product line
+| Task | Tool |
+|---|---|
+| Long session feature (>1h) · scripts · terminal | Claude Code main thread |
+| In-IDE CSS / small fn / autocomplete | Cursor |
+| Idea evaluation (build or skip) | skill: `idea-eval` |
+| Feature / product implementation plan | `@planner` |
+| Code review (pre-merge / pre-release) | `@code-reviewer` |
+| Pre-release full audit | skill: `ship-checklist` |
+| Batch content production | skill: `content-blitz` |
+
+### Sales / revenue line
+| Task | Tool |
+|---|---|
+| Discovery call script + lead scoring | skill: `lead-intake` |
+| Interview → client proposal | skill: `proposal-gen` |
+| Standard contract / SOW | template `docs/templates/SOW.md` |
+| Post-delivery → 5 reusable content pieces | skill: `case-study-gen` |
+| Pipeline status / follow-up cadence | `docs/pipeline.md` |
+| Customer inquiries · post-sales · feedback | `@customer-support` |
+| Outbound content | `@marketing` |
+
+### Infra
+- `docs/system-memory.md` — brand voice (warm-direct · no fluff) / pricing tiers ($5k/$12k/$25k for services) / lead weights / founder background
+- `docs/handbook.md` — agent / skill triggers + walkthroughs
+- `scripts/lib/` — reusable libs (lead-scorer.js · pipeline-tally.js)
+
+### Session management
+| Command | When to use |
+|---|---|
+| `/save-session` | Real handoffs only (project delivered · machine swap · ≥ 1 day gap) |
+| `/resume-session` | New session after ≥ 1 day gap |
+| `/learn` | Repeated correction or non-obvious confirmation |
+
+**Rule**: Before `/save-session` ask "Will I look at this memo in 3 months?" Yes → save · No → skip.
+
+## 5 · Multi-Claude collaboration
+
+⚠️ Active concern · I run 2-3 sessions in parallel often (services + SaaS work).
+
+### Mandatory startup scan (30s)
+1. `CLAUDE.md` (auto)
+2. `docs/contracts/*.md` — cross-module interface contracts
+3. `docs/sessions/` latest 1-2 memos
+4. SessionStart hook board (auto)
+
+### Anti-patterns I've burned on
+- ❌ Editing `lib/api-types.ts` from frontend session without checking backend contract → 4h debugging Saturday morning
+- ❌ Two sessions starting dev servers on port 3000 → silent override → wrong data
+- ❌ Modifying shared `docs/system-memory.md` without bumping version → next session uses stale weights
+
+**Rule of thumb**: "Will another Claude pause for 1 second seeing my change?" Yes → contract / memo · No → just do it.
+
+## 6 · Directory map
+
+```
+.claude/                — Claude Code config (this pack)
+customers/              — One folder per client
+products/               — saas-app/ (the SaaS pilot)
+docs/
+  ├── strategy.md
+  ├── decisions/        — 14 ADRs to date
+  ├── learnings/        — 23 entries
+  ├── sessions/         — 8 handoff memos
+  ├── contracts/        — 4 active contracts
+  └── pipeline.md       — 6 active leads
+```
+
+## 7 · OSS-First product methodology
+
+For any new product / direction:
+
+1. Search GitHub for ≥1k-star projects in same domain — list 5-10 candidates
+2. Run 1-2 with real data · 3 real cases · log startup time / output quality
+3. Position your value layer: what's as-is / modified / they can't do
+4. Fork + extend in outer layer · don't fork-and-rewrite
+
+**Heuristic**: ≥1k-star same-domain repo? → fork+extend · No → caution (market may have died)
+
+## 8 · API cost discipline
+
+⚠️ Last quarter: $340 spent in one debugging weekend. Discipline:
+
+Pattern: **dry-run shows cost estimate + full prompt → I review → explicit `--approve` flag → real call**.
+
+When agents call paid APIs:
+1. Run preview mode (no API call · only estimate)
+2. Paste preview to chat
+3. Wait for explicit "approve"
+4. Only then add `--approve`
+
+Banned: silently presetting `--approve` · "should be fine" hand-wave.
+
+## 9 · State file decay discipline
+
+⚠️ Burned by reading 2-month-old `docs/pipeline.md` and treating closed leads as open.
+
+Rolling-state files mandatory:
+1. Frontmatter must have `staleAfterDays` + `nextReviewBy`
+2. AI reading expired rolling-state must proactively warn me
+3. No TTL = invisible landmine
+
+## 10 · Banned actions
+
+- Don't write API keys / secrets / customer privacy into git-tracked files
+- Without explicit approval: `rm -rf` · `git push --force` · prod DB changes · external email / social posting
+- Estimate paid API cost before calling
+- Never `--no-verify` / `--no-gpg-sign`
+
+---
+
+## Version
+
+- v1.4 · 2026-04-22 · added "Anti-patterns I've burned on" to multi-Claude (real incident: weekend debugging)
+- v1.3 · 2026-03-15 · API cost discipline section after $340 incident
+- v1.2 · 2026-02-08 · routing table reorg (services / product / infra split)
+- v1.1 · 2026-01-12 · added pipeline.md to infra
+- v1.0 · 2025-12-04 · initial customization from Solo Founder OS template

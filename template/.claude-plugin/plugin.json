@@ -1,0 +1,104 @@
+{
+  "name": "claude-code-pack",
+  "displayName": "Solo Founder OS · Claude Code Pack",
+  "version": "1.0.0",
+  "description": "Battle-tested Claude Code config pack from 6 months of solo SaaS work. 11 agents · 10 skills · 10 commands · 4 hooks · CLAUDE.md operating manual.",
+  "author": {
+    "name": "pagoda111king",
+    "url": "https://github.com/pagoda111king"
+  },
+  "license": "MIT (code) + CC-BY-NC-4.0 (content)",
+  "homepage": "https://github.com/pagoda111king/claude-code-pack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pagoda111king/claude-code-pack.git"
+  },
+  "keywords": [
+    "claude-code",
+    "agents",
+    "skills",
+    "commands",
+    "hooks",
+    "solo-founder",
+    "indie-hacker",
+    "operating-system",
+    "claude-code-config",
+    "developer-productivity"
+  ],
+  "agents": [
+    "agents/architect.md",
+    "agents/planner.md",
+    "agents/code-reviewer.md",
+    "agents/security-reviewer.md",
+    "agents/test-engineer.md",
+    "agents/frontend-expert.md",
+    "agents/backend-expert.md",
+    "agents/doc-writer.md",
+    "agents/customer-support.md",
+    "agents/marketing.md",
+    "agents/validator.md"
+  ],
+  "skills": [
+    "skills/idea-eval/SKILL.md",
+    "skills/lead-intake/SKILL.md",
+    "skills/proposal-gen/SKILL.md",
+    "skills/case-study-gen/SKILL.md",
+    "skills/prior-art-search/SKILL.md",
+    "skills/eval-refine/SKILL.md",
+    "skills/ship-checklist/SKILL.md",
+    "skills/release-window/SKILL.md",
+    "skills/soft-launch/SKILL.md",
+    "skills/content-blitz/SKILL.md"
+  ],
+  "commands": [
+    "commands/plan.md",
+    "commands/eval.md",
+    "commands/save-session.md",
+    "commands/resume-session.md",
+    "commands/learn.md",
+    "commands/learn-review.md",
+    "commands/orchestrate.md",
+    "commands/loop.md",
+    "commands/skill-create.md",
+    "commands/cost.md"
+  ],
+  "hooks": [
+    {
+      "name": "session-start",
+      "event": "SessionStart",
+      "command": "node hooks/session-start.js"
+    },
+    {
+      "name": "pre-bash-safety-check",
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "command": "node hooks/pre-bash-safety-check.js"
+    },
+    {
+      "name": "pre-compact-reminder",
+      "event": "PreCompact",
+      "command": "node hooks/pre-compact-reminder.js"
+    },
+    {
+      "name": "stop-learning-reminder",
+      "event": "Stop",
+      "command": "node hooks/stop-learning-reminder.js"
+    }
+  ],
+  "documentation": {
+    "manual": "../CLAUDE.md",
+    "install": "../docs/INSTALL.md",
+    "recipes": "../RECIPES.md",
+    "examples": "../examples/"
+  },
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "node": ">=18"
+  },
+  "totals": {
+    "agents": 11,
+    "skills": 10,
+    "commands": 10,
+    "hooks": 4
+  }
+}
